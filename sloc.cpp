@@ -233,7 +233,7 @@ std::string determinartipo(std::string arquivo){
 std::string determinarnome(std::string nomefluxo){
     std::string nome;
     int i=nomefluxo.size();
-    while(nomefluxo[i]!='\\'){//o nome será tudo até a primeira "/"
+    while(nomefluxo[i]!='\\' && nomefluxo[i]!= '/'){//o nome será tudo até a primeira "/"
         nome.push_back(nomefluxo[i]);
         i--;
     }
