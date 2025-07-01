@@ -462,14 +462,14 @@ void lerfluxo(const char* dir,std::vector<fileinfos> &arquivos,bool recursaoativ
         if (entrada->d_type == DT_DIR && recursaoativa){//caso tenha um diretório dentro do diretório atual e o usuário tenha solicitado a busca recursiva
             std::string sdir(dir);
             std::string ndir(entrada->d_name);
-            std::string tempc= sdir+"\\"+ndir;//montando caminho para o diretório encontrado
+            std::string tempc= sdir+"/"+ndir;//montando caminho para o diretório encontrado
             char* tempcc = const_cast<char*>(tempc.c_str());
             lerfluxo(tempcc,arquivos,recursaoativa);//chamada recursiva da função sobre o diretório encontrado
         }
         if(entrada->d_type == DT_REG){//se for achado um arquivo regular no diretório será aplicado nele a função "lerarquivo" nele
             std::string sdir(dir);
             std::string narq(entrada->d_name);
-            std::string tempf=sdir+"\\"+narq;
+            std::string tempf=sdir+"/"+narq;
             lerarquivo(tempf,arquivos);
         }
     }
