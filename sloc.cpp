@@ -185,6 +185,9 @@ int tamanhosig(std::string str){
     else if(str.size()==2||str=="100"){//caso seja 
         return 3;
     }
+    else{
+        return 2;
+    }
 }/**
  * @brief Função para auxiliar na impressão tabela
  */
@@ -305,6 +308,7 @@ int Running_options(int& agrc, char* agrv[],ordenacaop& pordem, ordenacaot& tord
             arquivospp.push_back(i);
         }
     }
+    return 0;
 }
 /**
  * 
